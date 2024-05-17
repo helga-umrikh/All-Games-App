@@ -4,7 +4,15 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 1em !important;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
 
+}
+
+@media screen and (max-width: 1200px) {
+  .data-controls-widget {
+    justify-content: flex-start !important;
+  }
 }
