@@ -1,0 +1,44 @@
+.games-list {
+  min-height: 100% !important;
+}
+
+.game {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+  &> :first-child {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+
+  &__poster {
+    width: 10em;
+    max-height: 4em;
+    margin: 0 2em 0 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__poster>img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__screenshots-carousel {
+    max-width: 10em;
+  }
+
+  &__screenshots-carousel>div {
+    max-width: inherit;
+    overflow: hidden;
+  }
+
+}
+
+.screenshots-carousel {
+  &__item>img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

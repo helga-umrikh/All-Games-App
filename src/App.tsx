@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import './App.scss'
 import { Layout } from 'antd'
 import HeaderComponent from './components/HeaderComponent/HeaderComponent'
 import { Route, Routes } from 'react-router-dom'
@@ -9,7 +10,7 @@ function App() {
         <Layout className="App">
             <HeaderComponent />
             <Routes>
-                <Route path="/" element={<GameExplorerPage/>} />
+                <Route path="/" element={<GameExplorerPage />} />
             </Routes>
         </Layout>
     )

@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 
+
 a {
   text-decoration: none;
 }
@@ -34,10 +35,27 @@ h6 {
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
+}
+
+body {
   margin: 0 auto;
 }
 
 #root {
-  height: 100%;
+  min-height: inherit !important;
+}
+
+.page-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.error {
+  margin: 4em 2em;
+
+  &__title {
+    font-family: "Press STart 2P";
+  }
 }
