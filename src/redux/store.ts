@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { gamesAPI } from '../api/DataService'
+import filtersSlice from './slices/filtersSlice'
 
 const rootReducer = combineReducers({
     [gamesAPI.reducerPath]: gamesAPI.reducer,
+    filters: filtersSlice,
 })
 
 export const setupStore = () => {
