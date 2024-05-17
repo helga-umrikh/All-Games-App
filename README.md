@@ -18,7 +18,7 @@ The app is built using React TypeScript, RTK Query and styled using SCSS
 To start using the app, follow the steps below:
 
 1.  **Get the RapidAPI Key:**
-    Visit the [Free-To-Play Games Database](https://rawg.io/) on RawgAPI's website. Sign up for an account if needed, and obtain the Authorization key. This key is required to access the API.
+    Visit the [RAWG Games Database](https://rawg.io/) on RawgAPI's website. Sign up for an account if needed, and obtain the Authorization key. This key is required to access the API.
 2.  **Add the Access Key to the .env file:**
     Open the `.env` file in the root of the project and replace `YOUR_RAPIDAPI_KEY` with the key you obtained from the RawgAPI website.
 
