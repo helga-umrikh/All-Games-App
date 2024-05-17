@@ -1,12 +1,12 @@
 import React from 'react'
 import './DataControlsWidget.scss'
-import SortingComponent from '../SortingComponent/SortingComponent'
 import Filter from '../Filter/Filter'
 import { useFetchAllFIlterOptionsQuery } from '../../api/DataService'
 import { FilterOption } from '../../interfaces/FiltersOptions'
 import { Button } from 'antd'
 import { useDispatch } from 'react-redux'
 import { clearFilters } from '../../redux/slices/filtersSlice'
+import SortingComponent from '../SortingComponent/SortingComponent'
 
 const DataControlsWidget = () => {
     const { data: platformOptions } = useFetchAllFIlterOptionsQuery('platforms')
@@ -15,7 +15,15 @@ const DataControlsWidget = () => {
 
     return (
         <div className="data-controls-widget">
-            <SortingComponent />
+            <SortingComponent
+                options={[
+                    { value: 'rating', label: 'Increase Rating' },
+                    { value: '-rating', label: 'Decrease Rating' },
+                ]}
+                sortingLabel="Rating"
+                sortingType="ordering"
+            />
+
             <Filter
                 options={
                     platformOptions &&
@@ -50,6 +58,7 @@ const DataControlsWidget = () => {
                 filterLabel={'Players'}
                 filterType={'tags'}
             />
+
             <Button
                 onClick={() => {
                     dispatch(clearFilters())
