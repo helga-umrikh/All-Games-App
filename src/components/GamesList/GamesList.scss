@@ -3,7 +3,6 @@
 }
 
 .game {
-  flex-direction: column !important;
   align-items: flex-start !important;
 
   &> :first-child {
@@ -26,7 +25,7 @@
   }
 
   &__screenshots-carousel {
-    max-width: 10em;
+    max-width: 15em;
   }
 
   &__screenshots-carousel>div {
@@ -40,5 +39,20 @@
   &__item>img {
     width: 100%;
     object-fit: cover;
+  }
+}
+
+.slick-list {
+  border-radius: 8px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .game {
+    flex-direction: column !important;
+    justify-content: center !important;
+
+    &__screenshots-carousel {
+      margin: 2em 0;
+    }
   }
 }

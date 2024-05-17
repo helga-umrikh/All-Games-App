@@ -35,20 +35,26 @@ const GamesList: FC<GamesListProps> = ({ games, error, isLoading }) => {
                         </div>
                         <div className="game__description">
                             <p>{item.rating}</p>
-                            <Title level={4}>{item.name}</Title>
+                            <Title level={3}>{item.name}</Title>
                             <p>{`Playtime: ${item.playtime}`}</p>
                         </div>
                     </div>
-                    <Carousel className="game__screenshots-carousel">
-                        {item.short_screenshots.map((i) => (
-                            <div className="screenshots-carousel__item">
-                                <img
-                                    src={i.image}
-                                    alt={`${item.name}screenshots`}
-                                />
-                            </div>
-                        ))}
-                    </Carousel>
+                    <div>
+                        <Title level={4}>Screenshots:</Title>
+                        <Carousel
+                            className="game__screenshots-carousel"
+                            autoplay
+                        >
+                            {item.short_screenshots.map((i) => (
+                                <div className="screenshots-carousel__item">
+                                    <img
+                                        src={i.image}
+                                        alt={`${item.name}screenshots`}
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                    </div>
                 </List.Item>
             )}
         ></List>
