@@ -45,14 +45,15 @@ const GamesList: FC<GamesListProps> = ({ games, error, isLoading }) => {
                             className="game__screenshots-carousel"
                             autoplay
                         >
-                            {item.short_screenshots.map((i) => (
-                                <div className="screenshots-carousel__item">
-                                    <img
-                                        src={i.image}
-                                        alt={`${item.name}screenshots`}
-                                    />
-                                </div>
-                            ))}
+                            {item.short_screenshots &&
+                                item.short_screenshots.map((i) => (
+                                    <div className="screenshots-carousel__item">
+                                        <img
+                                            src={i.image}
+                                            alt={`${item.name}screenshots`}
+                                        />
+                                    </div>
+                                ))}
                         </Carousel>
                     </div>
                 </List.Item>
