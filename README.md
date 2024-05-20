@@ -9,8 +9,6 @@ All Games App is an interface for SPA application. It provides users with access
 
 The app is built using React TypeScript, RTK Query and styled using SCSS
 
-## Link to deploy
-
 
 # Getting Started
 
