@@ -1,25 +1,18 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-// const paramsSerializer = (params: any) => {
-//     return queryString.stringify({
-//         ...params,
-//         key: process.env.REACT_APP_ACCESS_KEY,
-//     })
-// }
-
 export const gamesAPI = createApi({
     reducerPath: 'gamesAPI',
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://api.rawg.io/api',
-        // paramsSerializer,
     }),
     endpoints: (builder) => ({
         fetchAllGames: builder.query({
-            query: (filter) => ({
+            query: ({ filters, page }) => ({
                 url: '/games',
                 params: {
                     key: process.env.REACT_APP_ACCESS_KEY,
-                    ...filter,
+                    page: page,
+                    ...filters,
                 },
             }),
         }),

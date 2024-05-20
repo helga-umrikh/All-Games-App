@@ -9,7 +9,12 @@ const GameExplorerPage = () => {
     const filters = useSelector(
         (state: RootState) => state.filters.selectedFilters
     )
-    const { data, error, isLoading } = useFetchAllGamesQuery(filters || null)
+
+    const page = useSelector((state: RootState) => state.currentPage)
+
+    const { data, error, isLoading } = useFetchAllGamesQuery(
+        { filters: filters, page: page } || null
+    )
 
     return (
         <div className="game-explorer-page page">
@@ -19,6 +24,7 @@ const GameExplorerPage = () => {
                     games={data && data.results}
                     error={error}
                     isLoading={isLoading}
+                    totalCount={data && data.count}
                 />
             </div>
         </div>

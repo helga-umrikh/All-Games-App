@@ -5,15 +5,25 @@ import { AllGames } from '../../interfaces/AllGamesInterfaces'
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query'
 import { SerializedError } from '@reduxjs/toolkit'
 import { Typography } from 'antd'
+import { useDispatch } from 'react-redux'
+import { addCurrentPage } from '../../redux/slices/pageSlice'
 const { Title } = Typography
 
 interface GamesListProps {
     games: AllGames[]
     error: FetchBaseQueryError | SerializedError | undefined
     isLoading: boolean
+    totalCount: number
 }
 
-const GamesList: FC<GamesListProps> = ({ games, error, isLoading }) => {
+const GamesList: FC<GamesListProps> = ({
+    games,
+    error,
+    isLoading,
+    totalCount,
+}) => {
+    const dispatch = useDispatch()
+
     return error ? (
         <div className="error">
             <Title className="error__title"> Error </Title>
@@ -24,6 +34,13 @@ const GamesList: FC<GamesListProps> = ({ games, error, isLoading }) => {
             loading={isLoading}
             dataSource={games}
             bordered
+            pagination={{
+                pageSize: 20,
+                total: totalCount,
+                onChange: (page) => {
+                    dispatch(addCurrentPage(page))
+                },
+            }}
             renderItem={(item) => (
                 <List.Item className="game" key={item.id}>
                     <div>

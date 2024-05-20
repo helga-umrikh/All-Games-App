@@ -15,17 +15,12 @@ const filtersSlice = createSlice({
                 [key]: value,
             }
         },
-        removeFilter: (state, action) => {
-            const keyToRemove = action.payload
-            // @ts-ignore
-            delete state.selectedFilters[keyToRemove]
-        },
         clearFilters: (state) => {
             state.selectedFilters = {}
         },
     },
 })
 
-export const { addFilter, removeFilter, clearFilters } = filtersSlice.actions
+export const { addFilter, clearFilters } = filtersSlice.actions
 
 export default filtersSlice.reducer
