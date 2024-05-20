@@ -11,7 +11,6 @@ The app is built using React TypeScript, RTK Query and styled using SCSS
 
 ## Link to deploy
 
-[DEPLOY](https://all-games-app.vercel.app/)
 
 # Getting Started
 
